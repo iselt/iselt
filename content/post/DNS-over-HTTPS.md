@@ -2,6 +2,8 @@
 title = '使用 DoH 提升网上冲浪体验'
 date = 2024-04-20T11:32:30+08:00
 draft = false
+categories = ['小技巧']
+tags = ['网络', 'DNS', 'DoH']
 +++
 
 ## 什么是 DNS 污染
