@@ -41,6 +41,8 @@ DoH 服务器的原理就是开启一个 Web API 接口（一般为 `https://<do
 
 因此，我们可以自己搭建一个 DoH 服务器，既能保证隐私，提高网上冲浪体验，又能有更好的访问速度。
 
+## 我的 DoH 服务器
+
 我搭建了一个优化后的 DoH 服务器：`https://doh.iselt.top/dns-query`，针对国内域名，使用阿里云公共 DNS 加快请求速度；针对国外域名，使用加密 DNS 获取准确的 IP 地址。欢迎读者使用。
 
 ## 搭建自己的 DoH 服务器
@@ -353,7 +355,7 @@ services:
 
 这里我使用的是 [`nginx proxy manager`](https://github.com/xiaoxinpro/nginx-proxy-manager-zh/), 有 Web UI 界面, 并支持自动注册和更新证书, 具体配置不在此赘述, 可自行查阅文档.
 
----
+#### 测试
 
 至此我们的 DoH 服务器已经搭建完成, 使用 `curl` 测试一下
 
