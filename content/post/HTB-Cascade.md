@@ -259,3 +259,7 @@ evil-winrm -i 10.10.10.182 -u s.smith -p sT333ve2
 ```
 
 在 `C:\Users\s.smith\Desktop` 下找到 `user.txt`
+
+## Lateral Movement
+
+## 横向移动

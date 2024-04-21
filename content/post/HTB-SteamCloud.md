@@ -5,9 +5,9 @@ description = 'HackTheBox SteamCloud Walkthrough'
 math = false
 tags = [
     "Linux",
-    "Docker Escape",
-
-
+    "Docker",
+    "Kubernetes",
+    "Kubelet",
 ]
 categories = [
     "HackTheBox"
