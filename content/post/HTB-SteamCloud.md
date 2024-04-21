@@ -17,6 +17,8 @@ draft = false
 
 [![20240421144115](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144115.png)](https://app.hackthebox.com/machines/SteamCloud)
 
+> 翻译自官方 Walkthrough
+
 ## 概要
 
 SteamCloud 是一台简单难度的机器。端口扫描显示它有一堆 Kubernetes 特定端口开放。我们无法枚举 Kubernetes API，因为它需要身份验证。现在，由于 Kubelet 允许匿名访问，我们可以通过枚举 Kubelet 服务提取 K8s 集群中所有 pod 的列表。此外，我们可以进入其中一个 pod 并获取用于身份验证到 Kubernetes API 的密钥。现在我们可以创建和生成一个恶意 pod，然后使用 Kubectl 在 pod 中运行命令来读取 root 标志。
