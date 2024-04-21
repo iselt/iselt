@@ -11,7 +11,7 @@ tags = [
 categories = [
     "HackTheBox"
 ]
-draft = true
+draft = false
 +++
 
 
