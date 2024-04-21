@@ -490,6 +490,8 @@ JWT_SECRET: str = "SuperSecretSigningKey-HTB"
 
 ![20240421175753](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421175753.png)
 
+## 取得立足点
+
 使用新的 `JWT` 访问 `/docs`，尝试调用 `/admin/exec/{command}` 接口
 
 ```bash
