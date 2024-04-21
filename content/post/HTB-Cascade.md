@@ -19,6 +19,8 @@ categories: [
 draft: true
 ---
 
+[![20240421144458](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144458.png)](https://app.hackthebox.com/machines/235)
+
 ## nmap 枚举
 
 ```bash
