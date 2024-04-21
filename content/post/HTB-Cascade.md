@@ -1,9 +1,10 @@
 ---
-title: "HTB WP: Cascade"
+title: "HTB Cascade"
 date: 2024-04-20T00:42:39+08:00
 description: HackTheBox Cascade Walkthrough
 math: false
 tags: [
+    "Windows",
     "Active Directory",
     "LDAP",
     "Kerberos",
@@ -244,3 +245,15 @@ msf6 > irb
 ```
 
 获得 s.smith 的 TightVNC 密码：sT333ve2
+
+## Get Shell
+
+使用 `windapsearch` 可以 `s.smith` 账户具有远程管理的 `CN`
+
+因此可以使用 `evil-winrm` 登录
+
+```bash
+evil-winrm -i 10.10.10.182 -u s.smith -p sT333ve2
+```
+
+在 `C:\Users\s.smith\Desktop` 下找到 `user.txt`
