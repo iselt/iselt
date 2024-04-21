@@ -1,6 +1,6 @@
 baseURL = 'https://blog.iselt.top/'
 languageCode = 'zh-cn'
-title = "iselt's Hack Staff"
+title = "ISELT HACK TIPS"
 theme = "hulga"
 paginate = 10000
 
@@ -8,7 +8,7 @@ paginate = 10000
 # show in HTML meta tag
 author = "iselt"
 keywords = "Cyber Security, CTF, Hacker, HackTheBox"
-description = "iselt's blog, hack staff"
+description = "iselt's blog, hack stuff"
 
 # change bulma's primary color
 primaryColor = "#0D1F2D"
