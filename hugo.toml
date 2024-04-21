@@ -2,7 +2,7 @@ baseURL = 'https://blog.iselt.top/'
 languageCode = 'zh-cn'
 title = "iselt's Hack Staff"
 theme = "hulga"
-paginate = 10
+paginate = 10000
 
 [params]
 # show in HTML meta tag
