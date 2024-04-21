@@ -2,106 +2,106 @@ baseURL = 'https://blog.iselt.top/'
 languageCode = 'zh-cn'
 title = "iselt's Hack Staff"
 theme = "hulga"
-paginate = 3
+paginate = 10
 
 [params]
-  # show in HTML meta tag
-  author = "iselt"
-  keywords = "Cyber Security, CTF, Hacker, HackTheBox"
-  description = "iselt's blog, hack staff"
+# show in HTML meta tag
+author = "iselt"
+keywords = "Cyber Security, CTF, Hacker, HackTheBox"
+description = "iselt's blog, hack staff"
 
-  # change bulma's primary color
-  primaryColor = "#0D1F2D"
+# change bulma's primary color
+primaryColor = "#0D1F2D"
 
-  # use primary color everywhere, default true
-  primaryEverywhere = true
+# use primary color everywhere, default true
+primaryEverywhere = true
 
-  # change bulma's link color (secondary color in this theme)
-  linkColor = "#7C90DB"
+# change bulma's link color (secondary color in this theme)
+linkColor = "#7C90DB"
 
-  # subtitle on homepage
-  # subtitle = "Anything about hacking"
+# subtitle on homepage
+# subtitle = "Anything about hacking"
 
-  # copyright text on footer
-  copyright = "Copyright © 2024 iselt. All rights reserved."
+# copyright text on footer
+copyright = "Copyright © 2024 iselt. All rights reserved."
 
-  # enable katex rendering on every post page, default false
-  math = false
+# enable katex rendering on every post page, default false
+math = false
 
-  # enable postcss, mainly for css purge (713kB->155kB->22kB gzipped, but this makes build slower), default false
-  postcss = true
+# enable postcss, mainly for css purge (713kB->155kB->22kB gzipped, but this makes build slower), default false
+postcss = true
 
-  # enable showing content summary below post title in home page, default false
-  showSummary = false
+# enable showing content summary below post title in home page, default false
+showSummary = false
 
-  # set paginate on taxonomy term page (tags or categories), default 10
-  termPaginate = 3
+# set paginate on taxonomy term page (tags or categories), default 10
+termPaginate = 3
 
-  # enable toc on every post page, default false
-  toc = true
+# enable toc on every post page, default false
+toc = true
 
-  # enable TOC auto collapse, default false
-  autoCollapseToc = false
+# enable TOC auto collapse, default false
+autoCollapseToc = false
 
-  # enable prefers-color-scheme:dark, default false
-  darkMedia = true
+# enable prefers-color-scheme:dark, default false
+darkMedia = true
 
-  # enable user to toggle dark mode with a menu, default false
-  darkToggle = true
+# enable user to toggle dark mode with a menu, default false
+darkToggle = true
 
-  # enable hero section's is-bold effect, default false
-  heroBold = false
+# enable hero section's is-bold effect, default false
+heroBold = false
 
-  # enable hero section that looks like steam deck's home page, default false
-  heroSteamDeck = false
+# enable hero section that looks like steam deck's home page, default false
+heroSteamDeck = false
 
-  # enable PWA, prepare your icons and DON'T forget to modify manifest.json, default false
-  pwa = false
+# enable PWA, prepare your icons and DON'T forget to modify manifest.json, default false
+pwa = false
 
-  # disable jsdelivr cdn, default false
-  noCDN = true
+# disable jsdelivr cdn, default false
+noCDN = true
 
 # for postcss-purgecss
 # see https://purgecss.com/guides/hugo.html
 [build]
-   writeStats = true
+writeStats = true
 
 # to enable different hightlight themes in light/dark mode 
 [markup]
-  [markup.highlight]
-    noClasses = false
+[markup.highlight]
+noClasses = false
 
 [menu]
-  [[menu.main]]
-    identifier = "index"
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    identifier = "archives"
-    name = "Archives"
-    url = "/archives/"
-    weight = 2
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    weight = 4
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 5
-  [[menu.main]]
-    identifier = "search"
-    name = "Search"
-    url = "/search/"
-    weight = 6
+[[menu.main]]
+identifier = "index"
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "/archives/"
+weight = 2
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 3
+[[menu.main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 4
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 5
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 6
 
 [taxonomies]
 category = "categories"
