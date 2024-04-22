@@ -1,6 +1,7 @@
 +++
 title = '使用 DoH 提升网上冲浪体验'
 date = 2024-04-20T11:32:30+08:00
+description = '使用 DoH 提升网上冲浪体验，部署自己的 DoH 服务器，避免 DNS 污染。'
 draft = false
 categories = ['小技巧']
 tags = ['网络', 'DNS', 'DoH']

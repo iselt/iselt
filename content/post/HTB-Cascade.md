@@ -17,6 +17,7 @@ categories: [
     "HackTheBox"
 ]
 draft: true
+description: 'HackTheBox Cascade Walkthrough'
 ---
 
 [![20240421144458](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144458.png)](https://app.hackthebox.com/machines/235)

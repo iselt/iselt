@@ -1,6 +1,7 @@
 +++
 title = 'HTB Backend'
 date = 2024-04-21T16:25:01+08:00
+description = 'HackTheBox Backend Walkthrough'
 tags = [
     "Linux",
     "Web",
