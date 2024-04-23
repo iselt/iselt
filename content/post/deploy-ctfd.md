@@ -198,7 +198,7 @@ CONTAINER ID   IMAGE                     COMMAND                  CREATED       
 
 ![20240423134940](https://raw.githubusercontent.com/iselt/ImageBed/main/20240423134940.png)
 
-其他配置内容请查看 <https://github.com/dlut-sss/CTFd-Public>
+其他配置以及题目设置请查看 <https://github.com/dlut-sss/CTFd-Public>
 
 ## 配置公网端口映射
 
