@@ -14,7 +14,7 @@ categories = ['CTF']
 
 由于动态容器对 CPU 和内存要求较高，很多时候会在本地部署 CTFd，并使用 frp 等内网穿透工具将 CTFd 服务映射到公网。
 
-本文将介绍使用由 `Scr1w战队` 二次开发的 CTFd 平台，在本地服务器部署并结合 frp 内网穿透工具，部署具有动态容器功能的 CTFd 靶场。
+本文将介绍使用由 [`Scr1w战队` 二次开发的 CTFd 平台](https://github.com/dlut-sss/CTFd-Public)，在本地服务器部署并结合 frp 内网穿透工具，部署具有动态容器功能的 CTFd 靶场。
 
 ## 要求
 
