@@ -6,8 +6,6 @@ tags = ['CTFd', '靶场搭建']
 categories = ['CTF']
 +++
 
-> 本文使用 GitHub 作为图床，可能出现图片无法加载的情况
-
 ## 前言
 
 [CTFd](https://github.com/CTFd/CTFd) 是一个用于举办CTF比赛的平台，它提供了丰富的功能，包括题目管理、用户管理、比赛管理等。

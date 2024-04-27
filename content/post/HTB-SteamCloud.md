@@ -15,7 +15,7 @@ categories = [
 draft = false
 +++
 
-[![20240421144115](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144115.png)](https://app.hackthebox.com/machines/SteamCloud)
+[![20240421144115](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144115.png)](https://app.hackthebox.com/machines/SteamCloud)
 
 > 翻译自官方 Walkthrough
 

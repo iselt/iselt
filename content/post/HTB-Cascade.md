@@ -20,7 +20,7 @@ draft: true
 description: 'HackTheBox Cascade Walkthrough'
 ---
 
-[![20240421144458](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144458.png)](https://app.hackthebox.com/machines/235)
+[![20240421144458](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144458.png)](https://app.hackthebox.com/machines/235)
 
 ## nmap 枚举
 

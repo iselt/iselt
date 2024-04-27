@@ -45,11 +45,11 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 首先，使用Python生成一个PTY。一旦bash在PTY中运行，用 `Ctrl-Z` 将shell放到后台。
 
-![20240405230443](https://raw.githubusercontent.com/iselt/ImageBed/main/20240405230443.png)
+![20240405230443](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240405230443.png)
 
 当 shell 处于后台时，现在检查当前终端和 STTY 信息，以便我们可以强制连接的 shell 与其匹配
 
-![20240405230459](https://raw.githubusercontent.com/iselt/ImageBed/main/20240405230459.png)
+![20240405230459](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240405230459.png)
 
 所需信息是 TERM 类型（“xterm-256color”）和当前 TTY 的大小（“rows 38; columns 116”）
 
@@ -63,7 +63,7 @@ stty raw -echo
 
 使用 fg 将 shell 置于前台。它将重新打开反向 shell，但格式将会出错。最后，使用 reset 重新初始化终端。
 
-![20240405230515](https://raw.githubusercontent.com/iselt/ImageBed/main/20240405230515.png)
+![20240405230515](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240405230515.png)
 
 注意：我没有再次输入 nc 命令（因为它可能看起来像上面）。我实际输入了 fg ，但没有回显。 nc 命令是当前正在前台运行的作业。然后在netcat shell中输入了 reset 命令
 

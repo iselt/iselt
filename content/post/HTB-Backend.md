@@ -327,11 +327,11 @@ curl -X POST http://10.10.11.161/api/v1/user/login -d 'username=test@test.com&pa
 
 使用浏览器插件 `Modify Header` 添加 `Authorization` 头
 
-![20240421171136](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421171136.png)
+![20240421171136](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240421171136.png)
 
 即可访问 `/docs` 接口，返回了 `FastAPI` 的文档
 
-![20240421174846](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421174846.png)
+![20240421174846](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240421174846.png)
 
 通过 `/api/v1/user/SecretFlagEndpoint` 我们获取到了 user 的 flag
 
@@ -489,7 +489,7 @@ JWT_SECRET: str = "SuperSecretSigningKey-HTB"
 
 使用 `jwt.io` 修改 `JWT`
 
-![20240421175753](https://raw.githubusercontent.com/iselt/ImageBed/main/20240421175753.png)
+![20240421175753](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240421175753.png)
 
 ## 取得立足点
 
