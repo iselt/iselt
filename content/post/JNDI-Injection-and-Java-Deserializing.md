@@ -13,7 +13,7 @@ tags = ['漏洞原理', 'Java', 'JNDI注入','Java反序列化']
 
 ---
 
-> [!WARNING] 声明：本博客中涉及到的相关漏洞均为官方已经公开并修复的漏洞，涉及到的安全技术也仅用于企业安全建设和安全对抗研究。本文仅限业内技术研究与讨论，严禁用于非法用途，否则产生的一切后果自行承担。
+> :warning: 声明：本博客中涉及到的相关漏洞均为官方已经公开并修复的漏洞，涉及到的安全技术也仅用于企业安全建设和安全对抗研究。本文仅限业内技术研究与讨论，严禁用于非法用途，否则产生的一切后果自行承担。
 
 ## 0. 前言
 
@@ -51,7 +51,7 @@ public class HelloImpl implements IHello {
 }
 ```
 
-> [!NOTE] 注: IHello是客户端和服务端共用的接口（客户端本地必须有远程对象的接口，不然无法指定要调用的方法，而且其全限定名必须与服务器上的对象完全相同），HelloImpl是一个服务端远程对象，提供了一个sayHello方法供远程调用。它没有继承UnicastRemoteObject类或者实现java.rmi.Remote接口，而是在构造方法中调用了UnicastRemoteObject.exportObject()。
+> :memo: IHello是客户端和服务端共用的接口（客户端本地必须有远程对象的接口，不然无法指定要调用的方法，而且其全限定名必须与服务器上的对象完全相同），HelloImpl是一个服务端远程对象，提供了一个sayHello方法供远程调用。它没有继承UnicastRemoteObject类或者实现java.rmi.Remote接口，而是在构造方法中调用了UnicastRemoteObject.exportObject()。
 
 在JVM之间通信时，RMI对远程对象和非远程对象的处理方式是不一样的，它并没有直接把远程对象复制一份传递给客户端，而是传递了一个远程对象的Stub，Stub基本上相当于是远程对象的引用或者代理。Stub对开发者是透明的，客户端可以像调用本地方法一样直接通过它来调用远程方法。Stub中包含了远程对象的定位信息，如Socket端口、服务端主机地址等等，并实现了远程调用过程中具体的底层网络通信细节，所以RMI远程调用逻辑是这样的：
 
@@ -151,7 +151,7 @@ Object local_obj = ctx.lookup("rmi://kingx_kali:8080/test");
 - -> NamingManager.getObjectInstance()
 - -> factory.getObjectInstance()
 
-> [!TIP] JNDI查找远程对象时InitialContext.lookup(URL)的参数URL可以覆盖一些上下文中的属性，比如：Context.PROVIDER_URL。
+> :bulb: JNDI查找远程对象时InitialContext.lookup(URL)的参数URL可以覆盖一些上下文中的属性，比如：Context.PROVIDER_URL。
 
 Spring框架的spring-tx.jar中的JtaTransactionManager.readObject()中就存在这个问题，当进行对象反序列化的时候，会执行lookup()操作，可以进行JNDI注入。
 
