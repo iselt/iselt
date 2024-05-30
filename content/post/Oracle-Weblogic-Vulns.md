@@ -1,5 +1,5 @@
 +++
-title = 'Oracle Weblogic Vulns'
+title = 'Weblogic 漏洞合集'
 date = 2024-05-30T23:20:36+08:00
 draft = false
 categories = ['漏洞研究']
