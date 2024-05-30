@@ -1,7 +1,9 @@
 +++
 title = 'Spring Boot 漏洞合集'
 date = 2024-05-30T23:03:14+08:00
-draft = true
+draft = false
+categories = ['漏洞研究']
+tags = ['漏洞原理', 'Java', 'Spring Boot','框架漏洞']
 +++
 
 > 作者：LandGrey
