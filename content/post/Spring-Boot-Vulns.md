@@ -332,7 +332,7 @@ Content-Type: application/json
 
 正常的话，此时 nc 监听的服务器会收到目标发来的请求，其中包含类似如下 `Authorization` 头内容：
 
-```http
+```http-header
 Authorization: Basic dmFsdWU6MTIzNDU2
 ```
 
