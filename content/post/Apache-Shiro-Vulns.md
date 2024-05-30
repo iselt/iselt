@@ -197,8 +197,8 @@ CVE-2020-1957，Spring Boot中使用 Apache Shiro 进行身份验证、权限控
 
 构造恶意请求 `/xxx/..;/admin/`，即可绕过权限校验，访问到管理页面。
 
-```http
-GET /xxx/..;/admin/
+```url
+/xxx/..;/admin/
 ```
 
 #### 流量特征
@@ -290,8 +290,8 @@ CVE-2020-17523 涉及 Apache Shiro 在与 Spring 一起使用时，通过特制�
 
 #### POC
 
-```http
-GET /login;jsessionid=INVALID
+```url
+/login;jsessionid=INVALID
 ```
 
 #### 流量特征
@@ -320,8 +320,8 @@ SpringBoot > 2.6 且 Shiro < 1.11.0
 
 #### POC
 
-```http
-GET /contextpath/somePath;otherPath
+```url
+/contextpath/somePath;otherPath
 ```
 
 ## CVE-2010-3863
@@ -337,8 +337,8 @@ GET /contextpath/somePath;otherPath
 
 ### POC
 
-```http
-GET /./admin
+```url
+/./admin
 ```
 
 ### 流量特征
@@ -392,7 +392,7 @@ map.put("/admin/page", "anon");
 
 循环中先匹配到 `/admin/*`（这里是通过while语句对去除尾部斜线的uri进行匹配）,然后跳出循环，进入到 `filterChainManager.proxy(originalChain, requestURINoTrailingSlash);`，注意，这里真正的参数就是去除尾部斜线的uri，也就是 `/admin/page`，所以在 `DefaultFilterChainManager#getChain` 中得到的权限是 `anon`，这样就达到绕过目的。
 
-> 漏洞分析：<https://xz.aliyun.com/t/11633?time__1311=mqmx0DBDuDnGiQQDsKgqCq9CgfqAIxx&alichlgref=https%3A%2F%2Fwww.bing.com%2F#toc-46>
+> 漏洞分析：<https://xz.aliyun.com/t/11633>
 
 ### 版本
 
@@ -430,8 +430,8 @@ Apache Shiro < 1.12.0 或 2.0.0-alpha-3
 
 ### POC
 
-```http
-GET /app/%2e%2e%2fadmin
+```url
+/app/%2e%2e%2fadmin
 ```
 
 ### 流量特征
@@ -452,8 +452,8 @@ Apache Shiro < 1.13.0 或 2.0.0-alpha-4
 
 构造恶意路径请求如 `../../etc/passwd`，可以访问系统的敏感文件。
 
-```http
-GET /app/../../etc/passwd
+```url
+/app/../../etc/passwd
 ```
 
 ### 流量特征
