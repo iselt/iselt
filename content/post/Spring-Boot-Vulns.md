@@ -448,7 +448,7 @@ GET 请求目标网站的 `/env` 或 `/actuator/env` 接口，搜索 `******` �
 ```sql
 select * from java.util.Hashtable$Entry x WHERE (toString(x.key).contains("password"))
 
-或
+-- 或
 
 select * from java.util.LinkedHashMap$Entry x WHERE (toString(x.key).contains("password"))
 ```
