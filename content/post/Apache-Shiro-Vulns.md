@@ -1,5 +1,5 @@
 +++
-title = 'Apache Shiro Vulns'
+title = 'Shiro 漏洞合集'
 date = 2024-05-30T22:50:39+08:00
 draft = false
 categories = ['漏洞研究']
