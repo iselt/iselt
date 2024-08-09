@@ -1,6 +1,7 @@
 +++
 title = '轻松部署具有动态容器功能的 CTFd 靶场'
 date = 2024-04-22T21:10:56+08:00
+description = '使用由 Scr1w战队 二次开发的 CTFd 平台，在本地服务器部署并结合 frp 内网穿透工具，部署具有动态容器功能的 CTFd 靶场。'
 draft = false
 tags = ['CTFd', '靶场搭建']
 categories = ['CTF']
