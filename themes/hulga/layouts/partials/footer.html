@@ -1,0 +1,19 @@
+<footer class="footer">
+  <div class="content has-text-centered">
+    <!-- <p>Powered by <a href="https://gohugo.io">Hugo</a>. Theme <a href="https://github.com/wlh320/hugo-theme-hulga">Hulga</a></p> -->
+    <p class="beian">
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2021022843号-7</a>
+  </p>
+    <p>
+    {{- if .Site.Params.copyright -}}
+    {{ .Site.Params.copyright }}
+    {{- else -}}
+    {{ .Site.Copyright }}
+    {{ end }}
+    </p>
+  </div>
+</footer>
+{{ if .Site.Params.pwa }}
+{{ partial "pwa.html" . }}
+{{ end }}
+{{ template "_internal/google_analytics.html" . }}
