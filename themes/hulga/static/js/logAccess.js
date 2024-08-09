@@ -27,6 +27,6 @@ async function logAccess(url) {
 }
 
 // 获取当前 URL 并去除 # 及其后面的内容
-const currentUrl = window.location.href.split("#")[0];
+currentUrl = window.location.href.split("#")[0];
 
 logAccess(currentUrl);
