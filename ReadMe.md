@@ -1,5 +1,5 @@
 # 💫 About Me:
-💦 A rookie CTFer.<br>🔭 I’m currently working on OSCP.
+💦 A rookie CTFer.
 
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=iselt&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
