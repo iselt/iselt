@@ -26,7 +26,7 @@ categories = ['CTF']
 
 ### 架构示意图
 
-![20240423131724](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240423131724.png)
+![20240423131724](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240423131724.png)
 
 ### 启用 Docker Swarm
 
@@ -195,9 +195,9 @@ CONTAINER ID   IMAGE                     COMMAND                  CREATED       
 
 > 这里仅需更改 `自动连接网络` 为 `ctfd_frp_containers` 即可
 
-![20240423134118](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240423134118.png)
+![20240423134118](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240423134118.png)
 
-![20240423134940](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240423134940.png)
+![20240423134940](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240423134940.png)
 
 其他配置以及题目设置请查看 <https://github.com/dlut-sss/CTFd-Public>
 

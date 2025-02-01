@@ -79,7 +79,7 @@ Kerberos 认证使用一种称为“票证（tickets）”的令牌系统，并�
 
 当用户希望访问网络上的资源或服务时，Kerberos 认证流程启动。Kerberos 认证流程在用户成功获取票证授权服务（TGS）或服务票据（ST）后完成，允许用户对服务进行身份验证并使用该服务。
 
-![Kerberos 认证流程图](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905132717.png)
+![Kerberos 认证流程图](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905132717.png)
 
 ### 1. KRB_AS_REQ：向认证服务（AS）请求 TGT
 
@@ -123,7 +123,7 @@ KDC（具体是票证授权服务器）尝试验证 TGT。如果验证成功，�
 
 ### 1. AS-REP Roast 攻击
 
-![AS-REP Roast 攻击示意图](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905135731.png)
+![AS-REP Roast 攻击示意图](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905135731.png)
 
 > Kerberos 认证流程步骤：*2. KRB_AS_REP：从认证服务获取 TGT*
 
@@ -148,7 +148,7 @@ AS-REP Roast 攻击是基于在不提前知道用户密码的情况下获取票�
 
 ### 2. 黄金票据攻击（Golden Ticket Attack）
 
-![黄金票据攻击示意图](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905140852.png)
+![黄金票据攻击示意图](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905140852.png)
 
 > Kerberos 认证流程步骤：*2. KRB_AS_REP：从认证服务获取 TGT*
 
@@ -201,7 +201,7 @@ Kerberoasting 攻击基于攻击者为特定 SPN 申请服务票据的能力，�
 
 ### 4. 白银票据攻击（Silver Ticket Attack）
 
-![白银票据攻击示意图](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905142129.png)
+![白银票据攻击示意图](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905142129.png)
 
 > Kerberos 认证流程步骤：*6. KRB_AP_REP：授予客户端对服务的访问权限*
 
@@ -232,7 +232,7 @@ Kerberoasting 攻击基于攻击者为特定 SPN 申请服务票据的能力，�
 
 ### 5. MS14–068（Kerberos Checksum Vulnerability，Kerberos 校验和漏洞）
 
-![MS14–068 攻击示意图](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905143120.png)
+![MS14–068 攻击示意图](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905143120.png)
 
 #### MS14–068 简介
 
@@ -246,7 +246,7 @@ MS14–068，也被称为 **Kerberos 校验和漏洞**，于 2014 年 11 月被�
 
 为了理解这个漏洞，我们需要了解 TGT 的结构。
 
-![简化的TGT可视化表示](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905143323.png)
+![简化的TGT可视化表示](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905143323.png)
 
 TGT 包含一个结构，称为特权属性证书（Privilege Attribute Certificate，PAC），它存储了与该 TGT 所属用户相关的信息，例如用户的 RID（Relative Identifier，相对标识符）及其所属的组。为了确保 PAC 的完整性，KDC（密钥分发中心）使用 KDC 主密钥（KDC Master Key）对其进行加密，该密钥仅 KDC 知晓。
 
@@ -273,7 +273,7 @@ typedef struct _PAC_SIGNATURE_DATA {
 
 下图，我们展示了一个简化的 TGS-REQ 报文可视化示意图，该报文旨在利用 MS14-068 漏洞。 在本例中，包含了一个有效的 TGT，但明显缺少预期的 PAC（Privilege Attribute Certificate，特权属性证书）信息。 相反，攻击者在 "enc-authorization-data "字段中插入了经过篡改的 PAC。 这个伪造的 PAC 谎称相关用户是各种高权限组（包括域管理员组）的成员。 此外，需要强调的是，该 PAC 是通过简单的 MD5 技术“签名”的。
 
-![TGS-REQ 包含伪造的 PAC 来利用 MS14–068](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905144147.png)
+![TGS-REQ 包含伪造的 PAC 来利用 MS14–068](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240905144147.png)
 
 ## 综述
 

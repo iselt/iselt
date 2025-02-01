@@ -55,7 +55,7 @@ public class HelloImpl implements IHello {
 
 在JVM之间通信时，RMI对远程对象和非远程对象的处理方式是不一样的，它并没有直接把远程对象复制一份传递给客户端，而是传递了一个远程对象的Stub，Stub基本上相当于是远程对象的引用或者代理。Stub对开发者是透明的，客户端可以像调用本地方法一样直接通过它来调用远程方法。Stub中包含了远程对象的定位信息，如Socket端口、服务端主机地址等等，并实现了远程调用过程中具体的底层网络通信细节，所以RMI远程调用逻辑是这样的：
 
-![RMI远程调用](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529231548.png)
+![RMI远程调用](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529231548.png)
 
 从逻辑上来看，数据是在Client和Server之间横向流动的，但是实际上是从Client到Stub，然后从Skeleton到Server这样纵向流动的。
 
@@ -90,7 +90,7 @@ rhello.sayHello("test");
 
 使用RMI Registry之后，RMI的调用关系是这样的：
 
-![RMI注册表](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529231628.png)
+![RMI注册表](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529231628.png)
 
 所以其实从客户端角度看，服务端应用是有两个端口的，一个是RMI Registry端口（默认为1099），另一个是远程对象的通信端口（随机分配的）。这个通信细节比较重要，真实利用过程中可能会在这里遇到一些坑。
 
@@ -102,7 +102,7 @@ RMI核心特点之一就是动态类加载，如果当前JVM中没有某个类�
 
 这里涉及到的角色：客户端、RMI注册表、远程对象服务器、托管class文件的Web服务器可以分别位于不同的主机上：
 
-![动态加载类](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/动态加载类.png)
+![动态加载类](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/动态加载类.png)
 
 ## 2. JNDI注入和JdbcRowSetImpl利用链
 
@@ -112,7 +112,7 @@ RMI核心特点之一就是动态类加载，如果当前JVM中没有某个类�
 
 JNDI支持多种命名和目录提供程序（Naming and Directory Providers），RMI注册表服务提供程序（RMI Registry Service Provider）允许通过JNDI应用接口对RMI中注册的远程对象进行访问操作。将RMI服务绑定到JNDI的一个好处是更加透明、统一和松散耦合，RMI客户端直接通过URL来定位一个远程对象，而且该RMI服务可以和包含人员，组织和网络资源等信息的企业目录链接在一起。
 
-![JNDI架构](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/JNDI架构.png)
+![JNDI架构](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/JNDI架构.png)
 
 JNDI接口在初始化时，可以将RMI URL作为参数传入，而JNDI注入就出现在客户端的lookup()函数中，如果lookup()的参数可控就可能被攻击。
 
@@ -143,7 +143,7 @@ Object local_obj = ctx.lookup("rmi://kingx_kali:8080/test");
 
 在这里，攻击目标扮演的相当于是JNDI客户端的角色，攻击者通过搭建一个恶意的RMI服务端来实施攻击。我们跟入lookup()函数的代码中，可以看到JNDI中对Reference类的处理逻辑，最终会调用NamingManager.getObjectInstance()：
 
-![Reference调用链](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/Reference调用链.png)
+![Reference调用链](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/Reference调用链.png)
 
 调用链：
 
@@ -263,15 +263,15 @@ Caused by: java.net.ConnectException: Operation timed out
 
 所以当服务器有多张网卡，或者/etc/hosts中将主机名指向某个内网IP的时候，RMI Registry默认传递给客户端的通信Host也就是这个内网IP地址，远程利用时自然无法建立通信。Kali默认的hosts文件如下：
 
-![KaliHosts](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529230424.png)
+![KaliHosts](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529230424.png)
 
 可以看到，默认情况下kali主机名是解析到 127.0.1.1 了。我们通过抓包可以还原这个通信细节：
 
-![KaliHosts](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529230441.png)
+![KaliHosts](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529230441.png)
 
 注：攻击者RMI服务端向目标发送远程对象的定位信息
 
-![KaliHosts](https://gh.iinx.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529230455.png)
+![KaliHosts](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240529230455.png)
 
 注：目标向攻击者的远程对象发起请求
 
