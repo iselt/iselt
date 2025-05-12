@@ -128,6 +128,120 @@ mediatek/WIFI_RAM_CODE_MT7961_1.bin mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
 
 `*` 表示编译进内核，默认为 `M`
 
+**附：恢复旧版本的一些功能**
+
+`microsoft/WSL2-Linux-Kernel` 新版的内核减少了一些功能（本来是内核内置的改为模块编译），会导致一些功能异常，比如无法运行 Docker Desktop
+
+因此我写了一个脚本将内核编译配置恢复成旧版配置
+
+准备好稳定版（5.15）和当前版本的配置文件，运行以下脚本可以将稳定版中为y当前版本为m/n的改为y
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import re
+
+def parse_config_file(filepath):
+    """
+    解析内核配置文件，提取 CONFIG_ 选项及其值。
+    返回一个字典，键是选项名，值是选项值。
+    忽略注释掉的选项，例如 '# CONFIG_FOO is not set'。
+    """
+    config_options = {}
+    # 正则表达式匹配有效的 CONFIG_XXX=y 或 CONFIG_XXX=m 行
+    # 它会捕获选项名 (CONFIG_FOO) 和值 (y, m, "string", 123 等)
+    config_line_regex = re.compile(r"^(CONFIG_[A-Za-z0-9_]+)=(.*)$")
+
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                match = config_line_regex.match(line)
+                if match:
+                    option_name = match.group(1)
+                    option_value = match.group(2)
+                    # 对于字符串值，它们通常被引号包围，我们去掉引号
+                    if option_value.startswith('"') and option_value.endswith('"'):
+                        option_value = option_value[1:-1]
+                    config_options[option_name] = option_value
+    except FileNotFoundError:
+        print(f"错误：文件 '{filepath}' 未找到。")
+        return None
+    except Exception as e:
+        print(f"解析文件 '{filepath}' 时发生错误：{e}")
+        return None
+    return config_options
+
+def find_specific_options(config_path_6_6, config_path_5_15):
+    """
+    找出在 config_path_6_6 中为 'm' 或 'n'，且在 config_path_5_15 中为 'y' 的选项。
+    然后修改 config_path_6_6 文件，将这些选项的值更改为 'y'。
+    """
+    print(f"正在解析文件: {config_path_6_6}")
+    options_6_6 = parse_config_file(config_path_6_6)
+    if options_6_6 is None:
+        return
+
+    print(f"正在解析文件: {config_path_5_15}")
+    options_5_15 = parse_config_file(config_path_5_15)
+    if options_5_15 is None:
+        return
+
+    options_to_modify_in_6_6 = [] # 用于存储需要修改的选项名
+
+    for option, value_6_6 in options_6_6.items():
+        if value_6_6 == 'm' or value_6_6 == 'n':
+            if option in options_5_15 and options_5_15[option] == 'y':
+                options_to_modify_in_6_6.append(option)
+
+    if not options_to_modify_in_6_6:
+        print("\n未找到符合条件需要修改的选项。")
+        return
+
+    print(f"\n在 {config_path_6_6} 中以下选项将被修改为 'y':")
+    # 按字母顺序排序输出
+    for opt_name in sorted(options_to_modify_in_6_6):
+        print(f"{opt_name}=y (原值: {options_6_6[opt_name]})")
+
+    try:
+        with open(config_path_6_6, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+        
+        modified_lines = []
+        config_line_regex = re.compile(r"^(CONFIG_[A-Za-z0-9_]+)=(.*)$")
+
+        for line in lines:
+            match = config_line_regex.match(line.strip())
+            if match:
+                option_name = match.group(1)
+                if option_name in options_to_modify_in_6_6:
+                    modified_lines.append(f"{option_name}=y\n")
+                    options_6_6[option_name] = 'y' # 更新内存中的值，以防万一
+                else:
+                    modified_lines.append(line)
+            else:
+                modified_lines.append(line)
+        
+        with open(config_path_6_6, 'w', encoding='utf-8') as f:
+            f.writelines(modified_lines)
+        print(f"\n文件 '{config_path_6_6}' 已成功更新。")
+
+    except FileNotFoundError:
+        print(f"错误：文件 '{config_path_6_6}' 在尝试写入时未找到。")
+    except Exception as e:
+        print(f"写入文件 '{config_path_6_6}' 时发生错误：{e}")
+
+
+if __name__ == "__main__":
+    # --- 请在这里修改你的文件路径 ---
+    file_config_wsl_6_6 = "config-wsl-6.6"  # WSL 6.6 内核配置文件路径
+    file_config_wsl_5_15 = "config-wsl-5.15" # WSL 5.15（稳定版） 内核配置文件路径
+
+    find_specific_options(file_config_wsl_6_6, file_config_wsl_5_15)
+
+```
+
 **4. 保存并退出**
 
 向右移动到`<Save>`进行保存，然后退出
