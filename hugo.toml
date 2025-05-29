@@ -23,7 +23,7 @@ linkColor = "#7C90DB"
 # subtitle = "Anything about hacking"
 
 # copyright text on footer
-copyright = "Copyright © 2024 iselt. All rights reserved."
+copyright = "Copyright © 2025 iselt. All rights reserved."
 
 # enable katex rendering on every post page, default false
 math = false
@@ -74,34 +74,39 @@ noClasses = false
 [menu]
 [[menu.main]]
 identifier = "index"
-name = "Home"
+name = "首页"
 url = "/"
 weight = 1
 [[menu.main]]
 identifier = "archives"
-name = "Archives"
+name = "归档"
 url = "/archives/"
 weight = 2
 [[menu.main]]
 identifier = "tags"
-name = "Tags"
+name = "标签"
 url = "/tags/"
 weight = 3
 [[menu.main]]
 identifier = "categories"
-name = "Categories"
+name = "分类"
 url = "/categories/"
 weight = 4
 [[menu.main]]
 identifier = "about"
-name = "About"
+name = "关于"
 url = "/about/"
 weight = 5
 [[menu.main]]
 identifier = "search"
-name = "Search"
+name = "搜索"
 url = "/search/"
 weight = 6
+[[menu.main]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/iselt"
+weight = 7
 
 [taxonomies]
 category = "categories"
