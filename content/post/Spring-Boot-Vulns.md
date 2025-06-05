@@ -4,6 +4,17 @@ date = 2024-05-30T23:03:14+08:00
 draft = false
 categories = ['漏洞研究']
 tags = ['漏洞原理', 'Java', 'Spring Boot','框架漏洞']
+
+# SEO 相关元数据
+description = "Spring Boot 框架历史漏洞合集，包括信息泄露漏洞、远程代码执行漏洞等，详细分析漏洞原理、影响版本、POC 和利用方法。"
+keywords = ["Spring Boot", "Spring 漏洞", "Java 安全", "框架漏洞", "信息泄露", "远程代码执行", "路径遍历", "Actuator", "Spring Cloud", "反序列化"]
+summary = "全面整理 Spring Boot 框架的安全漏洞，涵盖信息泄露、远程代码执行、路径遍历等多种漏洞类型，提供详细的漏洞分析、POC 和检测方法，适合 Java 安全研究人员参考。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "Spring Boot 漏洞合集 - Iselt Hack Tips"
+  og_description = "Spring Boot 框架安全漏洞大全，包含信息泄露、远程代码执行等漏洞的详细分析和利用方法，适合 Java 安全研究人员和渗透测试工程师参考。"
+  og_type = "article"
 +++
 
 > 作者：LandGrey

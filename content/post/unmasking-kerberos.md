@@ -1,14 +1,24 @@
----
-title: "剖析 Kerberos | Kerberos 认证层攻击"
-date: 2024-09-05T14:52:25+08:00
-math: false
-tags: [
++++
+title = "剖析 Kerberos | Kerberos 认证层攻击"
+date = 2024-09-05T14:52:25+08:00
+math = false
+tags = [
     'Windows',
     "Active Directory",
     'Kerberos',
 ]
-categories: ['漏洞研究']
----
+categories = ['漏洞研究']
+
+# SEO 相关元数据
+keywords = ["Kerberos", "Active Directory", "AS-REP Roast", "黄金票据", "白银票据", "Kerberoasting", "MS14-068", "域控攻击", "Windows安全", "认证协议"]
+summary = "深入解析 Kerberos 认证协议及其安全漏洞，详细介绍 AS-REP Roast、黄金票据、白银票据、Kerberoasting 和 MS14-068 等攻击技术的原理、利用方法和防护策略。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "剖析 Kerberos | Kerberos 认证层攻击 - Iselt Hack Tips"
+  og_description = "全面解析 Kerberos 认证协议的工作原理和安全漏洞，深入学习域环境下的各种攻击技术和防护方法，适合安全研究人员和红队成员。"
+  og_type = "article"
++++
 
 > 翻译自：[Unmasking Kerberos | Attacking the Kerberos Authentication Layer](https://medium.com/@zaikoarg/unmasking-kerberos-attacking-the-kerberos-authentication-layer-7c05a6efa52b)
 >

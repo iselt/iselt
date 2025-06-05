@@ -13,6 +13,16 @@ categories = [
     "HackTheBox"
 ]
 draft = false
+
+# SEO 相关元数据
+keywords = ["HackTheBox", "HTB SteamCloud", "Kubernetes 渗透", "Kubelet 利用", "容器安全", "Docker", "K8s 集群", "kubectl", "Pod 逃逸", "Linux 渗透"]
+summary = "HackTheBox SteamCloud 机器的完整渗透测试过程，重点展示 Kubernetes 环境的安全测试方法。通过 Kubelet 匿名访问枚举 Pod，获取 K8s 认证密钥，创建恶意 Pod 实现容器逃逸和权限提升。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "HTB SteamCloud - Iselt Hack Tips"
+  og_description = "HackTheBox SteamCloud 机器渗透测试详解，专注于 Kubernetes 环境的安全测试技术，包含 Kubelet 利用和容器逃逸方法。"
+  og_type = "article"
 +++
 
 [![20240421144115](https://cfproxy.iselt.top/https://raw.githubusercontent.com/iselt/ImageBed/main/20240421144115.png)](https://app.hackthebox.com/machines/SteamCloud)

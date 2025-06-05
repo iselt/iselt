@@ -4,6 +4,16 @@ date = 2024-05-31T16:04:27+08:00
 draft = false
 categories = ['漏洞研究']
 tags = ['漏洞原理', 'Java', 'Log4j','框架漏洞']
+
+# SEO 相关元数据
+keywords = ["Log4Shell", "CVE-2021-44228", "Log4j漏洞", "JNDI注入", "远程代码执行", "Apache Log4j", "Java安全", "漏洞利用", "安全研究", "网络安全"]
+summary = "深入分析 Log4Shell（CVE-2021-44228）漏洞的原理、影响范围和利用方式。详细介绍 Log4j 中 JNDI 注入机制、漏洞触发条件、POC/EXP 构造方法以及相关的安全防护措施。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "Log4Shell 漏洞 - Iselt Hack Tips"
+  og_description = "全面解析 Log4Shell 漏洞的技术细节，包含 JNDI 注入原理、漏洞利用方法和防护建议，适合安全研究人员和开发者学习。"
+  og_type = "article"
 +++
 
 ## 前置知识

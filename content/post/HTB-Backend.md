@@ -13,6 +13,16 @@ categories = [
     "HackTheBox"
 ]
 draft = false
+
+# SEO 相关元数据
+keywords = ["HackTheBox", "HTB Backend", "API 渗透测试", "JWT 破解", "FastAPI", "目录扫描", "权限提升", "Linux 渗透", "Web 安全", "CTF"]
+summary = "HackTheBox Backend 机器的完整渗透测试过程，包括 FastAPI 接口枚举、JWT 密钥泄露利用、文件读取漏洞、命令执行接口发现和权限提升技巧。详细展示了现代 Web API 安全测试的实战方法。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "HTB Backend - Iselt Hack Tips"
+  og_description = "HackTheBox Backend 机器渗透测试详解，从 API 枚举到权限提升的完整攻击链分析，适合 Web 安全和 CTF 爱好者学习。"
+  og_type = "article"
 +++
 
 

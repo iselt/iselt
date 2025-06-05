@@ -4,6 +4,17 @@ date = 2024-05-30T22:50:39+08:00
 draft = false
 categories = ['漏洞研究']
 tags = ['漏洞原理', 'Java', 'Shiro','框架漏洞']
+
+# SEO 相关元数据
+description = "Apache Shiro 框架历史漏洞合集，包括 rememberMe 反序列化漏洞、AntPathMatcher 绕过漏洞等，详细分析漏洞原理、影响版本、POC 和流量特征。"
+keywords = ["Apache Shiro", "Shiro 漏洞", "rememberMe 反序列化", "Shiro-550", "Shiro-721", "AntPathMatcher 绕过", "Java 安全", "框架漏洞", "权限绕过", "反序列化攻击"]
+summary = "全面整理 Apache Shiro 框架从 2010 年到 2023 年的重要安全漏洞，涵盖 rememberMe 反序列化漏洞（CVE-2016-4437/Shiro-550、CVE-2019-12422/Shiro-721）、AntPathMatcher 相关的权限绕过漏洞系列，以及其他认证绕过漏洞，提供详细的漏洞分析、POC 和检测方法。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "Shiro 漏洞合集 - Iselt Hack Tips"
+  og_description = "Apache Shiro 框架安全漏洞大全，包含 rememberMe 反序列化、权限绕过等漏洞的详细分析和检测方法，适合安全研究人员和渗透测试工程师参考。"
+  og_type = "article"
 +++
 
 ## 简介

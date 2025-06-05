@@ -5,6 +5,16 @@ description = '深入理解JNDI注入与Java反序列化漏洞利用'
 draft = false
 categories = ['漏洞研究']
 tags = ['漏洞原理', 'Java', 'JNDI注入','Java反序列化']
+
+# SEO 相关元数据
+keywords = ["JNDI注入", "Java反序列化", "RMI", "JRMP", "FastJson", "JdbcRowSetImpl", "Reference", "远程代码执行", "Java安全", "反序列化漏洞"]
+summary = "深入解析 JNDI 注入和 Java 反序列化漏洞的利用原理和技术细节。详细介绍 RMI 机制、JNDI References 注入方法、JdbcRowSetImpl 利用链，以及 FastJson 反序列化漏洞的实际利用过程和常见问题解决方案。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "深入理解JNDI注入与Java反序列化漏洞利用 - Iselt Hack Tips"
+  og_description = "全面解析 JNDI 注入攻击技术，包含 RMI 机制、反序列化利用链、FastJson 漏洞利用等核心内容，适合 Java 安全研究人员深入学习。"
+  og_type = "article"
 +++
 
 > 作者：Kingx

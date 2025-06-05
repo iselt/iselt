@@ -5,6 +5,16 @@ description = '使用 DoH 提升网上冲浪体验，部署自己的 DoH 服务�
 draft = false
 categories = ['小技巧']
 tags = ['网络', 'DNS', 'DoH']
+
+# SEO 相关元数据
+keywords = ["DNS over HTTPS", "DoH", "DNS 污染", "DNS 劫持", "CoreDNS", "域名解析", "网络安全", "隐私保护", "VPS", "frp 内网穿透"]
+summary = "详细介绍 DNS over HTTPS (DoH) 技术原理，解释 DNS 污染问题及解决方案，提供自建 DoH 服务器的完整教程，包括国内外服务器部署、CoreDNS 配置、证书生成等技术细节。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "使用 DoH 提升网上冲浪体验 - Iselt Hack Tips"
+  og_description = "学习 DNS over HTTPS 技术，自建 DoH 服务器避免 DNS 污染，提升网络访问体验和隐私保护。包含完整的部署教程和技术原理解析。"
+  og_type = "article"
 +++
 
 ## 什么是 DNS 污染

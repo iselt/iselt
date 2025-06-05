@@ -1,16 +1,27 @@
----
-title: "为 WSL2 编译自定义内核并启用 USB 无线网卡支持（MT7921U）"
-date: 2025-05-11T01:23:00+08:00
-math: false
-tags: [
++++
+title = "为 WSL2 编译自定义内核并启用 USB 无线网卡支持（MT7921U）"
+date = "2025-05-11T01:23:00+08:00"
+math = false
+tags = [
     'WSL',
     "WiFi",
     'Linux',
     'Linux内核',
     'MT7921U'
 ]
-categories: ['小技巧']
----
+categories = ['小技巧']
+
+# SEO 相关元数据
+description = "详细教程：为 WSL2 编译自定义内核以支持 MT7921U USB 无线网卡，包括固件安装、内核配置、驱动编译和 USB 设备转发配置。"
+keywords = ["WSL2", "Linux内核编译", "MT7921U", "USB无线网卡", "WiFi驱动", "内核模块", "usbipd-win", "MediaTek", "网卡驱动", "WSL配置"]
+summary = "完整介绍如何为 WSL2 编译包含 MT7921U 驱动的自定义 Linux 内核，解决 WSL2 中使用新款 USB 无线网卡的兼容性问题。涵盖内核源码获取、驱动配置、固件集成、模块编译和设备转发等关键步骤。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "为 WSL2 编译自定义内核并启用 USB 无线网卡支持（MT7921U） - Iselt Hack Tips"
+  og_description = "学习如何为 WSL2 编译自定义内核以支持 MT7921U 等新款 USB 无线网卡，包含完整的编译配置和驱动安装教程。"
+  og_type = "article"
++++
 
 ## 背景介绍
 

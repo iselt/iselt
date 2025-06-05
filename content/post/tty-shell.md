@@ -4,6 +4,16 @@ date = 2024-04-21T18:11:44+08:00
 draft = false
 categories = ['小技巧']
 tags = ['Pentest', 'TTY', 'Reverse Shell']
+
+# SEO 相关元数据
+keywords = ["Reverse Shell", "TTY", "交互式Shell", "渗透测试", "Linux终端", "Python PTY", "socat", "stty", "Shell升级", "网络安全"]
+summary = "详细介绍如何将简单的 Reverse Shell 升级为具有完整 TTY 功能的交互式 Shell。包含 Python PTY、socat、stty 等多种方法，提供完整的命令参考和实操步骤。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "为 Reverse Shell 添加 TTY - Iselt Hack Tips"
+  og_description = "学习如何升级 Reverse Shell 为完全交互式的 TTY Shell，掌握多种实用方法和技巧，提升渗透测试效率。"
+  og_type = "article"
 +++
 
 ## Reverse Shell Cheat Sheet

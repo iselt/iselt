@@ -4,6 +4,17 @@ date = 2024-05-30T23:20:36+08:00
 draft = false
 categories = ['漏洞研究']
 tags = ['漏洞原理', 'Java', 'Weblogic','框架漏洞']
+
+# SEO 相关元数据
+description = "Oracle Weblogic 服务器历史漏洞合集，包括 XML 反序列化、T3 反序列化、任意文件上传、未授权访问等漏洞的详细分析和利用方法。"
+keywords = ["Weblogic", "Weblogic 漏洞", "T3 反序列化", "XML 反序列化", "CVE-2017-10271", "CVE-2018-2628", "CVE-2018-2894", "CVE-2020-14882", "Oracle 安全", "中间件漏洞"]
+summary = "全面整理 Oracle Weblogic 服务器的重要安全漏洞，涵盖 XML 反序列化漏洞（CVE-2017-10271）、T3 反序列化漏洞（CVE-2018-2628）、任意文件上传漏洞（CVE-2018-2894）、未授权访问漏洞（CVE-2020-14882/14883）等，提供详细的漏洞原理、POC 和检测方法。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "Weblogic 漏洞合集 - Iselt Hack Tips"
+  og_description = "Oracle Weblogic 服务器安全漏洞大全，包含反序列化、文件上传、未授权访问等漏洞的详细分析和利用方法，适合 Java 安全研究人员参考。"
+  og_type = "article"
 +++
 
 ## 简介

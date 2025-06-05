@@ -5,6 +5,16 @@ description = '使用由 Scr1w战队 二次开发的 CTFd 平台，在本地服�
 draft = false
 tags = ['CTFd', '靶场搭建']
 categories = ['CTF']
+
+# SEO 相关元数据
+keywords = ["CTFd", "CTF靶场", "动态容器", "Docker Swarm", "frp内网穿透", "CTFd-Whale", "Nginx反向代理", "靶场部署", "容器化", "Web安全"]
+summary = "详细介绍如何使用 Scr1w 战队二次开发的 CTFd 平台部署具有动态容器功能的 CTF 靶场，包括 Docker Swarm 配置、frp 内网穿透设置、CTFd-Whale 插件配置等完整部署流程。"
+
+# 开放图谱协议 (Open Graph)
+[params]
+  og_title = "轻松部署具有动态容器功能的 CTFd 靶场 - Iselt Hack Tips"
+  og_description = "学习如何部署支持动态容器的 CTFd 靶场平台，包含完整的 Docker Swarm、frp 内网穿透和 Nginx 配置教程，适合 CTF 赛事组织者。"
+  og_type = "article"
 +++
 
 ## 前言
